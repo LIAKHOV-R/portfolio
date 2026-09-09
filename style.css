@@ -23,14 +23,14 @@ body {
 }
 
 .header h1 {
-  font-size: 52px;           /* увеличили PORTFOLIO */
+  font-size: 60px;           /* увеличили PORTFOLIO */
   font-weight: 400;
   letter-spacing: 10px;      /* чуть шире, чтобы визуально тянулось */
   line-height: 1.1;
 }
 
 .subtitle {
-  font-size: 16px;           /* сделали крупнее */
+  font-size: 20px;           /* сделали крупнее */
   font-weight: 400;
   letter-spacing: 5.5px;     /* подгоняем ширину под PORTFOLIO */
   margin-top: 10px;
