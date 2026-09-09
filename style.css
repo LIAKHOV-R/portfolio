@@ -32,7 +32,7 @@ body {
 .subtitle {
   font-size: 20px;           /* сделали крупнее */
   font-weight: 500;
-  letter-spacing: 7px;     /* подгоняем ширину под PORTFOLIO */
+  letter-spacing: 5px;     /* подгоняем ширину под PORTFOLIO */
   margin-top: 0.2px;
   color: #191919;
 }
