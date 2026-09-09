@@ -23,17 +23,17 @@ body {
 }
 
 .header h1 {
-  font-size: 42px;
+  font-size: 52px;           /* увеличили PORTFOLIO */
   font-weight: 400;
-  letter-spacing: 6px;
+  letter-spacing: 10px;      /* чуть шире, чтобы визуально тянулось */
   line-height: 1.1;
 }
 
 .subtitle {
-  font-size: 13px;
+  font-size: 16px;           /* сделали крупнее */
   font-weight: 400;
-  letter-spacing: 3px;
-  margin-top: 8px;
+  letter-spacing: 5.5px;     /* подгоняем ширину под PORTFOLIO */
+  margin-top: 10px;
   color: #191919;
 }
 
@@ -80,9 +80,9 @@ body {
 
 .contact-link {
   font-family: Corbel, "Segoe UI", Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 4px;
+  font-size: 16px;           /* чуть крупнее */
+  font-weight: 600;          /* чуть жирнее */
+  letter-spacing: 5px;
   color: #191919;
   text-decoration: none;
   text-transform: uppercase;
