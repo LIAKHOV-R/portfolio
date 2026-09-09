@@ -3,41 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Проект 02</title>
+  <title>ПРОЕКТ 02</title>
   <link rel="stylesheet" href="../style.css">
   <style>
     .project-page {
-      max-width: 800px;
+      max-width: 1660px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 40px 130px 80px;
+      color: #191919;
     }
+
     .back-link {
       display: inline-block;
-      margin-bottom: 30px;
-      color: #222;
+      font-family: Corbel, "Segoe UI", Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #191919;
       text-decoration: none;
-      font-weight: 600;
-      border-bottom: 2px solid #222;
+      margin-bottom: 30px;
     }
     .back-link:hover {
       opacity: 0.7;
     }
-    h1 {
-      margin-bottom: 20px;
+
+    .project-title {
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
     }
-    p {
-      line-height: 1.6;
-      color: #444;
+
+    .project-description {
+      font-size: 16px;
+      line-height: 1.55;
+      max-width: 620px;
+      margin-bottom: 40px;
+    }
+
+    /* Большой фрейм под изображение */
+    .project-image {
+      width: 100%;
+      height: 520px;               /* можно потом поменять */
+      background-color: #c4c4c4;
+      margin-bottom: 40px;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .project-page {
+        padding: 30px 40px 60px;
+      }
+      .project-image {
+        height: 320px;
+      }
     }
   </style>
 </head>
 <body>
+
   <div class="project-page">
+
     <a href="../index.html" class="back-link">BACK&lt;</a>
-    
-    <h1>Проект 02</h1>
-    <p>Здесь будет описание проекта, фотографии, чертежи и т.д.</p>
-    <p>Пока это просто тестовая страница.</p>
+
+    <h1 class="project-title">ПРОЕКТ 02</h1>
+
+    <div class="project-description">
+      Здесь будет описание проекта, фотографии, чертежи и т.д.<br>
+      Пока это просто тестовая страница.
+    </div>
+
+    <!-- Фрейм под главное изображение проекта -->
+    <div class="project-image">
+      <!-- Когда будет картинка — вставьте так:
+      <img src="../images/project-02.jpg" alt="Проект 02">
+      -->
+    </div>
+
   </div>
+
 </body>
 </html>
