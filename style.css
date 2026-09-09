@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Corbel, "Segoe UI", Arial, sans-serif;
+  font-family: Corbel bold, "Segoe UI", Arial bold, sans-serif;
   background-color: #fcfcfc;
   color: #191919;
   min-height: 100vh;
@@ -19,11 +19,11 @@ body {
 .header {
   text-align: center;
   padding-top: 50px;
-  margin-bottom: 80px;
+  margin-bottom: 65px;
 }
 
 .header h1 {
-  font-size: 100px;           /* увеличили PORTFOLIO */
+  font-size: 90px;           /* увеличили PORTFOLIO */
   font-weight: 600;
   letter-spacing: 10px;      /* чуть шире, чтобы визуально тянулось */
   line-height: 1.1;
@@ -31,7 +31,7 @@ body {
 
 .subtitle {
   font-size: 40px;           /* сделали крупнее */
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 10px;     /* подгоняем ширину под PORTFOLIO */
   margin-top: 10px;
   color: #191919;
@@ -79,10 +79,10 @@ body {
 }
 
 .contact-link {
-  font-family: Corbel, "Segoe UI", Arial, sans-serif;
+  font-family: Corbel bold, "Segoe UI", Arial bold, sans-serif;
   font-size: 40px;           /* чуть крупнее */
   font-weight: 600;          /* чуть жирнее */
-  letter-spacing: 10px;
+  letter-spacing: 8px;
   color: #191919;
   text-decoration: none;
   text-transform: uppercase;
