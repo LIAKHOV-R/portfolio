@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BIO</title>
+  <title>page-01</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-    .project-page {
+    .page_01 {
       max-width: 800px;
       margin: 0 auto;
       padding: 40px 20px;
@@ -35,7 +35,7 @@
   <div class="project-page">
     <a href="../index.html" class="back-link">← На главную</a>
     
-    <h1>BIO</h1>
+    <h1>page-01</h1>
     <p>Здесь будет моя биография, контакты и другое</p>
     <p>Пока это просто тестовая страница.</p>
   </div>
