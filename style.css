@@ -96,3 +96,19 @@ body {
 a {
   color: inherit;
 }
+
+/* ===== Кнопка BACK для всех внутренних страниц ===== */
+.back-link {
+  font-family: Corbel, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #191919;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.back-link:hover {
+  opacity: 0.7;
+}
