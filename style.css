@@ -5,67 +5,117 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  font-family: Corbel, "Segoe UI", Arial, sans-serif;
+  background-color: #fcfcfc;
+  color: #191919;
   min-height: 100vh;
-  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
 }
 
-header {
+/* ----- HEADER ----- */
+.header {
   text-align: center;
-  margin-bottom: 40px;
+  padding-top: 50px;
+  margin-bottom: 70px;
 }
 
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 8px;
+.header h1 {
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  line-height: 1;
 }
 
-header p {
-  color: #666;
+.subtitle {
+  font-size: 14px;
+  letter-spacing: 4px;
+  margin-top: 12px;
+  font-weight: 400;
 }
 
+/* ----- GRID ----- */
 .bingo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 колонки */
-  gap: 16px;
-  max-width: 900px;
-  margin: 0 auto;
+  grid-template-columns: repeat(4, 130px);
+  grid-template-rows: repeat(3, 130px);
+  gap: 55px 120px;          /* вертикальный / горизонтальный зазор */
+  justify-content: center;
+  margin-bottom: 80px;
 }
 
 .cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1 / 1;          /* квадратные ячейки */
-  background-color: #ffffff;
-  border: 2px solid #ddd;
-  border-radius: 12px;
-  text-decoration: none;
-  color: #222;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.2s ease;
+  width: 130px;
+  height: 130px;
+  background-color: #c4c4c4;
+  display: block;
+  transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
 .cell:hover {
-  background-color: #222;
-  color: white;
-  border-color: #222;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: scale(1.04);
+  filter: brightness(0.92);
 }
 
-/* Адаптив для телефона */
-@media (max-width: 700px) {
+/* Цветные ячейки */
+.cell-yellow {
+  background-color: #f8d731;
+}
+
+.cell-pink {
+  background-color: #ff7fbf;
+}
+
+/* ----- FOOTER / CONTACT ----- */
+.footer {
+  margin-top: auto;
+  padding-bottom: 55px;
+  text-align: center;
+}
+
+.contact-link {
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #191919;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.contact-link:hover {
+  border-bottom-color: #191919;
+}
+
+/* ----- Адаптив ----- */
+@media (max-width: 1100px) {
   .bingo-grid {
-    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 60px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header h1 {
+    font-size: 28px;
+    letter-spacing: 4px;
+  }
+  
+  .bingo-grid {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 30px;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
   }
 }
 
 @media (max-width: 480px) {
   .bingo-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 110px);
+    gap: 25px;
   }
 }
