@@ -19,7 +19,7 @@ body {
 .header {
   text-align: center;
   padding-top: 50px;
-  margin-bottom: 65px;
+  margin-bottom: 20px;
 }
 
 .header h1 {
@@ -30,7 +30,7 @@ body {
 }
 
 .subtitle {
-  font-size: 40px;           /* сделали крупнее */
+  font-size: 45px;           /* сделали крупнее */
   font-weight: 600;
   letter-spacing: 10px;     /* подгоняем ширину под PORTFOLIO */
   margin-top: 10px;
