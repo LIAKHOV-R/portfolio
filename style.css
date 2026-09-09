@@ -19,19 +19,19 @@ body {
 .header {
   text-align: center;
   padding-top: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 }
 
 .header h1 {
   font-size: 100px;           /* увеличили PORTFOLIO */
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 4px;      /* чуть шире, чтобы визуально тянулось */
-  line-height: 0.5;
+  line-height: 1;
 }
 
 .subtitle {
-  font-size: 60px;           /* сделали крупнее */
-  font-weight: 800;
+  font-size: 30px;           /* сделали крупнее */
+  font-weight: 600;
   letter-spacing: 6px;     /* подгоняем ширину под PORTFOLIO */
   margin-top: 4px;
   color: #191919;
@@ -80,9 +80,9 @@ body {
 
 .contact-link {
   font-family: Corbel bold, "Segoe UI", Arial bold, sans-serif;
-  font-size: 40px;           /* чуть крупнее */
+  font-size: 30px;           /* чуть крупнее */
   font-weight: 600;          /* чуть жирнее */
-  letter-spacing: 8px;
+  letter-spacing: 6px;
   color: #191919;
   text-decoration: none;
   text-transform: uppercase;
