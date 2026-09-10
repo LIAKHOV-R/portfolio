@@ -9,7 +9,7 @@
     .project-page {
       max-width: 1775px;
       margin: 0 auto;
-      padding: 40px 70px 60px;
+      padding: 30px 50px 60px;
       color: #191919;
     }
 
@@ -17,6 +17,7 @@
       display: inline-block;
       font-family: Corbel, "Segoe UI", Arial, sans-serif;
       font-size: 14px;
+      font-weight: 400;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #191919;
@@ -69,8 +70,7 @@
 
 .carousel-slide {
   min-width: 100%;
-  aspect-ratio: 16 / 9;      /* важно! */
-  height: auto;
+  height: 780px;        /* было 655px — сделали выше */
 }
 
 .carousel-slide img {
@@ -120,7 +120,7 @@
     }
 
     @media (max-width: 1000px) {
-      .project-page { padding: 30px 30px 50px; }
+      .project-page { padding: 20px 20px 30px; }
       .project-header { grid-template-columns: 1fr; gap: 25px; }
       .carousel-slide { height: 380px; }
     }
