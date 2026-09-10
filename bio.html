@@ -94,12 +94,12 @@
     margin-bottom: 28px;
   }
 
-  .photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* фото заполнит квадрат без искажений */
+  display: block;
+}
 
   .contacts {
     font-size: 15px;
@@ -181,7 +181,11 @@
     </div>
 
     <!-- Правая колонка -->
-
+<div class="bio-right">
+  <div class="photo-frame">
+  <img src="images/L-R.jpg" alt="Роман Ляхов">
+</div>
+  
       <div class="contacts">
         <p>Дата рождения: 06.04.1991</p>
         <p>г. Екатеринбург / г. Алматы</p>
