@@ -3,41 +3,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Проект 03</title>
+  <title>ПРОЕКТ 03</title>
   <link rel="stylesheet" href="../style.css">
   <style>
     .project-page {
-      max-width: 800px;
+      max-width: 1775px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 40px 70px 60px;
+      color: #191919;
     }
+
     .back-link {
       display: inline-block;
-      margin-bottom: 30px;
-      color: #222;
+      font-family: Corbel, "Segoe UI", Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #191919;
       text-decoration: none;
-      font-weight: 600;
-      border-bottom: 2px solid #222;
+      margin-bottom: 25px;
     }
-    .back-link:hover {
-      opacity: 0.7;
+    .back-link:hover { opacity: 0.7; }
+
+    .project-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 40px;
+      align-items: start;
     }
-    h1 {
-      margin-bottom: 20px;
+
+    .project-title {
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
-    p {
-      line-height: 1.6;
-      color: #444;
+
+    .project-description {
+      font-size: 16px;
+      line-height: 1.55;
+      max-width: 520px;
+    }
+
+    .project-side-text {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #333;
+    }
+
+    /* ===== КАРУСЕЛЬ ===== */
+    .carousel {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      overflow: hidden;
+      background: #c4c4c4;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 655px;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Стрелки */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.85);
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      color: #191919;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+    .carousel-btn:hover {
+      background: #fff;
+    }
+    .carousel-btn.prev { left: 20px; }
+    .carousel-btn.next { right: 20px; }
+
+    /* Точки */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+    }
+    .dot.active {
+      background: #191919;
+    }
+
+    @media (max-width: 1000px) {
+      .project-page { padding: 30px 30px 50px; }
+      .project-header { grid-template-columns: 1fr; gap: 25px; }
+      .carousel-slide { height: 380px; }
     }
   </style>
 </head>
 <body>
+
   <div class="project-page">
+
     <a href="../index.html" class="back-link">BACK&lt;</a>
-    
-    <h1>Проект 03</h1>
-    <p>Здесь будет описание проекта, фотографии, чертежи и т.д.</p>
-    <p>Пока это просто тестовая страница.</p>
+
+    <div class="project-header">
+      <div>
+        <h1 class="project-title">ПРОЕКТ 03</h1>
+        <div class="project-description">
+          ЭСКИЗНЫЙ ПРОЕКТ: Центр проката квадроциклов<br>
+          СВЕРДЛОВСКАЯ ОБЛАСТЬ<br>
+          - РАЗРАБОТКА ЭСКИЗНОГО ПРОЕКТА
+        </div>
+      </div>
+
+      <div class="project-side-text">
+        ПРОЕКТ РАЗРАБОТАН ДЛЯ ЦЕНТРА ПО ПРОКАТУ И РЕМОНТУ КВАДРОЦИКЛОВ И МОТОТЕХНИКИ<br>
+        ИМЕЕТ ФУНКЦИЮ БАЗЫ ОТДЫХА И АДМИНИМТРАТИВНОГО ЗДАНИЯ<br>
+      </div>
+    </div>
+
+    <!-- КАРУСЕЛЬ -->
+    <div class="carousel">
+      <div class="carousel-track">
+        <!-- Слайд 1 -->
+        <div class="carousel-slide">
+          <img src="../images/PRJ11/qd-4.jpg" alt="Слайд 1">
+        </div>
+        <!-- Слайд 2 -->
+        <div class="carousel-slide">
+          <img src="../images/PRJ11/qd-3.jpg" alt="Слайд 2">
+        </div>
+        <!-- Слайд 3 -->
+        <div class="carousel-slide">
+          <img src="../images/PRJ11/qd-2.jpg" alt="Слайд 3">
+        </div>
+        <!-- Слайд 4 -->
+        <div class="carousel-slide">
+          <img src="../images/PRJ11/qd-1.jpg" alt="Слайд 4">
+        </div>
+      </div>
+
+      <button class="carousel-btn prev">‹</button>
+      <button class="carousel-btn next">›</button>
+    </div>
+
+    <div class="carousel-dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
   </div>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const dots = document.querySelectorAll('.dot');
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+    });
+  </script>
+
 </body>
 </html>
