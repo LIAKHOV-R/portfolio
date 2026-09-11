@@ -16,14 +16,14 @@
   }
 
   .bio-page {
-    max-width: 1750px;
+    max-width: 1400px;              /* сузили общую ширину → блоки ближе к центру */
     margin: 0 auto;
-    padding: 10px 40px 20px;
+    padding: 12px 60px 25px;
     display: grid;
-    grid-template-columns: 1fr 250px;
-    gap: 40px;
+    grid-template-columns: 1fr 240px;
+    gap: 50px;
     color: #191919;
-    align-items: start;          /* важно — всё прижимается к верху */
+    align-items: start;
   }
 
   .back-link {
@@ -35,7 +35,7 @@
     color: #191919;
     text-decoration: none;
     display: inline-block;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .back-link:hover {
     opacity: 0.7;
@@ -50,7 +50,7 @@
   }
 
   .bio-text {
-    font-size: 16px;             /* увеличили текст */
+    font-size: 16px;
     line-height: 1.4;
     margin: 0 0 9px 0;
   }
@@ -74,18 +74,19 @@
   }
 
   .skills-title {
-    font-size: 14px;
+    font-size: 16px;                /* увеличили */
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin: 16px 0 8px 0;
+    margin: 28px 0 12px 0;          /* опустили ниже */
   }
 
   .skills-icons {
-    width: calc(100% + 250px + 40px);
+    width: 100%;                    /* теперь ровно по ширине левой колонки */
+    max-width: 100%;
   }
 
   .skills-icons img {
-    width: 100%;
+    width: 85%;                     /* уменьшили на ~15% */
     height: auto;
     display: block;
   }
@@ -94,7 +95,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-top: 0;               /* фото на одном уровне с заголовком */
+    margin-top: 0;
   }
 
   .photo-frame {
@@ -113,7 +114,7 @@
   }
 
   .contacts {
-    font-size: 15px;             /* увеличили контакты */
+    font-size: 15px;
     line-height: 1.5;
     text-align: right;
   }
@@ -127,7 +128,7 @@
       padding: 15px 25px 40px;
       gap: 25px;
     }
-    .skills-icons {
+    .skills-icons img {
       width: 100%;
     }
     .bio-right {
