@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ОБО МНЕ — Liakhov Roman Architect</title>
   <link rel="stylesheet" href="style.css">
-  <style>
+<style>
   * {
     box-sizing: border-box;
   }
@@ -127,6 +127,141 @@
       grid-template-columns: 1fr;
       padding: 20px 25px 40px;
       gap: 25px;
+    }
+    .bio-right {
+      align-items: flex-start;
+    }
+  }
+</style>
+
+После замены сделайте Commit + Ctrl + F5.
+Содержимое должно подняться значительно выше, а полоска со скиллами стать шире.ля, тяни выше, не надо там вверху такое расстояние между кнопкой BACK и ОБО МНЕ. Все выше. И еще шире. Иконки дотягивай по ширине до правого края содержимого где контакты и фотка рожиПонял, тянем ещё выше и шире.
+Замените весь блок <style> на этот:
+CSS<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: #fcfcfc;
+  }
+
+  .bio-page {
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 12px 40px 25px;     /* минимальный верхний отступ */
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 40px;
+    color: #191919;
+    min-height: 100vh;
+  }
+
+  .back-link {
+    grid-column: 1 / -1;
+    font-family: Corbel, "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #191919;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 6px;          /* очень маленький отступ до заголовка */
+  }
+  .back-link:hover {
+    opacity: 0.7;
+  }
+
+  .bio-left h1 {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+  }
+
+  .bio-text {
+    font-size: 14.5px;
+    line-height: 1.35;
+    margin: 0 0 8px 0;
+  }
+
+  .bio-list {
+    list-style: none;
+    margin: 5px 0 14px 0;
+    padding: 0;
+  }
+  .bio-list li {
+    font-size: 14.5px;
+    line-height: 1.3;
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 1px;
+  }
+  .bio-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+  }
+
+  .skills-title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 14px 0 8px 0;
+  }
+
+  /* Иконки тянем на всю ширину левой колонки + правой */
+  .skills-icons {
+    width: calc(100% + 250px + 40px);  /* левая колонка + gap + правая колонка */
+    max-width: none;
+  }
+
+  .skills-icons img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .bio-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .photo-frame {
+    width: 230px;
+    height: 230px;
+    background-color: #c4c4c4;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .contacts {
+    font-size: 13px;
+    line-height: 1.45;
+    text-align: right;
+  }
+  .contacts p {
+    margin: 0 0 2px 0;
+  }
+
+  @media (max-width: 1100px) {
+    .bio-page {
+      grid-template-columns: 1fr;
+      padding: 15px 25px 40px;
+      gap: 25px;
+    }
+    .skills-icons {
+      width: 100%;
     }
     .bio-right {
       align-items: flex-start;
