@@ -62,12 +62,14 @@ body {
 }
 
 /* Цветные ячейки */
-.cell-yellow {
-  background-color: #f8d731;
+.cell-green {
+  background-color: ##3C643F;
+  opacity: 0.4;
 }
 
 .cell-pink {
-  background-color: #ff7fbf;
+  background-color: #FF007F;
+  opacity: 0.4;
 }
 
 /* ----- CONTACT ----- */
