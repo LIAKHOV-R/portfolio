@@ -18,12 +18,12 @@
   .bio-page {
     max-width: 1750px;
     margin: 0 auto;
-    padding: 12px 40px 25px;     /* минимальный верхний отступ */
+    padding: 10px 40px 20px;
     display: grid;
     grid-template-columns: 1fr 250px;
     gap: 40px;
     color: #191919;
-    min-height: 100vh;
+    align-items: start;          /* важно — всё прижимается к верху */
   }
 
   .back-link {
@@ -35,37 +35,37 @@
     color: #191919;
     text-decoration: none;
     display: inline-block;
-    margin-bottom: 6px;          /* очень маленький отступ до заголовка */
+    margin-bottom: 4px;
   }
   .back-link:hover {
     opacity: 0.7;
   }
 
   .bio-left h1 {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin: 0 0 10px 0;
+    margin: 0 0 12px 0;
   }
 
   .bio-text {
-    font-size: 14.5px;
-    line-height: 1.35;
-    margin: 0 0 8px 0;
+    font-size: 16px;             /* увеличили текст */
+    line-height: 1.4;
+    margin: 0 0 9px 0;
   }
 
   .bio-list {
     list-style: none;
-    margin: 5px 0 14px 0;
+    margin: 6px 0 14px 0;
     padding: 0;
   }
   .bio-list li {
-    font-size: 14.5px;
-    line-height: 1.3;
+    font-size: 16px;
+    line-height: 1.35;
     position: relative;
     padding-left: 14px;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
   }
   .bio-list li::before {
     content: "–";
@@ -77,13 +77,11 @@
     font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin: 14px 0 8px 0;
+    margin: 16px 0 8px 0;
   }
 
-  /* Иконки тянем на всю ширину левой колонки + правой */
   .skills-icons {
-    width: calc(100% + 250px + 40px);  /* левая колонка + gap + правая колонка */
-    max-width: none;
+    width: calc(100% + 250px + 40px);
   }
 
   .skills-icons img {
@@ -96,13 +94,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-top: 0;               /* фото на одном уровне с заголовком */
   }
 
   .photo-frame {
     width: 230px;
     height: 230px;
     background-color: #c4c4c4;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     overflow: hidden;
   }
 
@@ -114,12 +113,12 @@
   }
 
   .contacts {
-    font-size: 13px;
-    line-height: 1.45;
+    font-size: 15px;             /* увеличили контакты */
+    line-height: 1.5;
     text-align: right;
   }
   .contacts p {
-    margin: 0 0 2px 0;
+    margin: 0 0 3px 0;
   }
 
   @media (max-width: 1100px) {
