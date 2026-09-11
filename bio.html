@@ -74,11 +74,19 @@
   }
 
   .skills-icons {
+    max-width: 620px;        /* ограничиваем ширину */
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
     gap: 18px;
     align-items: flex-end;
     min-height: 80px;
+}
+    .skills-image {
+  width: 100%;             /* картинка подстроится под ширину */
+  height: auto;
+  display: block;
+}
   }
 
   .bio-right {
