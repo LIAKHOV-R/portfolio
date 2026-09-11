@@ -64,12 +64,12 @@ body {
 /* Цветные ячейки */
 .cell-green {
   background-color: ##3C643F;
-  opacity: 0.4;
+  opacity: 0.7;
 }
 
 .cell-pink {
   background-color: #FF007F;
-  opacity: 0.4;
+  opacity: 0.7;
 }
 
 /* ----- CONTACT ----- */
