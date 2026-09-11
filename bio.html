@@ -6,138 +6,134 @@
   <title>ОБО МНЕ — Liakhov Roman Architect</title>
   <link rel="stylesheet" href="style.css">
   <style>
-  /* ===== Стили страницы ОБО МНЕ ===== */
-  .bio-page {
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 30px 40px 100px;   /* уменьшили верхний отступ */
-    display: grid;
-    grid-template-columns: 1fr 325px;
-    gap: 80px;
-    color: #191919;
-    text-transform: none;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  .back-link {
-    grid-column: 1 / -1;
-    font-family: Corbel, "Segoe UI", Arial, sans-serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #191919;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 25px;
-  }
-  .back-link:hover {
-    opacity: 0.7;
-  }
+    body {
+      margin: 0;
+      background: #fcfcfc;
+    }
 
-  .bio-left h1 {
-    font-size: 26px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-  }
-
-  .bio-text {
-    font-size: 16px;          /* увеличили */
-    line-height: 1.25;
-    margin-bottom: 16px;
-    max-width: 620px;         /* ограничиваем ширину текста */
-  }
-
-  .bio-list {
-    list-style: none;
-    margin: 10px 0 28px 0;
-    padding: 0;
-    max-width: 620px;
-  }
-  .bio-list li {
-    font-size: 16px;
-    line-height: 1.25;
-    position: relative;
-    padding-left: 16px;
-  }
-  .bio-list li::before {
-    content: "–";
-    position: absolute;
-    left: 0;
-  }
-
-  .skills-title {
-    font-size: 16px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin: 35px 0 18px;
-  }
-
-  .skills-icons {
-    max-width: 620px;        /* ограничиваем ширину */
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    gap: 18px;
-    align-items: flex-end;
-    min-height: 80px;
-}
-    .skills-image {
-  width: 100%;             /* картинка подстроится под ширину */
-  height: auto;
-  display: block;
-}
-  }
-
-  .bio-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .photo-frame {
-    width: 250px;
-    height: 250px;
-    background-color: #c4c4c4;
-    margin-bottom: 28px;
-  }
-
-.photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* фото заполнит квадрат без искажений */
-  display: block;
-}
-
-  .contacts {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.65;
-    text-align: right;
-  }
-  .contacts p {
-    margin-bottom: 3px;
-  }
-
-  @media (max-width: 1100px) {
     .bio-page {
-      grid-template-columns: 1fr;
-      padding: 30px 40px 60px;
-      gap: 40px;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 25px 80px 40px;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 60px;
+      color: #191919;
+      min-height: 100vh;
     }
-    .bio-right {
-      align-items: flex-start;
+
+    .back-link {
+      grid-column: 1 / -1;
+      font-family: Corbel, "Segoe UI", Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #191919;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
     }
-    .photo-frame {
-      width: 1435px;
-      height: 120px;
+    .back-link:hover {
+      opacity: 0.7;
     }
-    .bio-text,
+
+    .bio-left h1 {
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 0 0 16px 0;
+    }
+
+    .bio-text {
+      font-size: 15px;
+      line-height: 1.45;
+      margin: 0 0 12px 0;
+      max-width: 580px;
+    }
+
     .bio-list {
-      max-width: 100%;
+      list-style: none;
+      margin: 8px 0 20px 0;
+      padding: 0;
+      max-width: 580px;
     }
-  }
-</style>
+    .bio-list li {
+      font-size: 15px;
+      line-height: 1.4;
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 2px;
+    }
+    .bio-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+    }
+
+    .skills-title {
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 25px 0 12px 0;
+    }
+
+    .skills-icons {
+      max-width: 700px;
+      overflow: hidden;
+    }
+
+    .skills-icons img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .bio-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .photo-frame {
+      width: 250px;
+      height: 250px;
+      background-color: #c4c4c4;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .contacts {
+      font-size: 14px;
+      line-height: 1.55;
+      text-align: right;
+    }
+    .contacts p {
+      margin: 0 0 3px 0;
+    }
+
+    @media (max-width: 1100px) {
+      .bio-page {
+        grid-template-columns: 1fr;
+        padding: 25px 30px 50px;
+        gap: 30px;
+      }
+      .bio-right {
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -151,18 +147,15 @@
 
       <p class="bio-text">
         Меня зовут Ляхов Роман Алексеевич. Я архитектор-проектировщик.<br>
-        Занимаюсь разработкой проектов благоустройства, общественных и <br>
-        промышленных зданий и сооружений.
+        Занимаюсь разработкой проектов благоустройства, общественных и промышленных зданий и сооружений.
       </p>
 
       <p class="bio-text">
-        Закончил Уральскую Государственную Архитектурно-художественную Академию в 2015 году. <br>
+        Закончил Уральскую Государственную Архитектурно-художественную Академию в 2015 году.<br>
         Степень — магистр архитектуры
       </p>
 
-      <p class="bio-text">
-        Опыт работы более 10 лет
-      </p>
+      <p class="bio-text">Опыт работы более 10 лет</p>
 
       <p class="bio-text">Разработка:</p>
       <ul class="bio-list">
@@ -178,21 +171,16 @@
 
       <div class="skills-title">SKILLS & TOOLS:</div>
       
-      <!-- Сюда потом вставите иконки -->
       <div class="skills-icons">
-        <div class="skill-item">
-          <img src="images/icon/icons.jpg" alt="icon">
-          <div class="skill-bar"></div>
-        </div>
-        -->
+        <img src="images/icon/icons.jpg" alt="Skills">
       </div>
     </div>
 
     <!-- Правая колонка -->
-<div class="bio-right">
-  <div class="photo-frame">
-  <img src="images/L-R.jpg" alt="Роман Ляхов">
-</div>
+    <div class="bio-right">
+      <div class="photo-frame">
+        <img src="images/L-R.jpg" alt="Роман Ляхов">
+      </div>
   
       <div class="contacts">
         <p>Дата рождения: 06.04.1991</p>
