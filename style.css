@@ -63,13 +63,11 @@ body {
 
 /* Цветные ячейки */
 .cell-green {
-  background-color: ##3C643F;
-  opacity: 0.7;
+  background-color: #95bf96;
 }
 
 .cell-pink {
-  background-color: #FF007F;
-  opacity: 0.7;
+  background-color: #ff8fc7;
 }
 
 /* ----- CONTACT ----- */
