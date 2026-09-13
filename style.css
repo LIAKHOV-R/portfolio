@@ -40,16 +40,16 @@ body {
 /* ----- GRID ----- */
 .bingo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 130px);
-  grid-template-rows: repeat(3, 130px);
-  gap: 55px 120px;          /* вертикальный gap 55px, горизонтальный 120px */
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(3, 150px);
+  gap: 45px 90px;          /* вертикальный gap 45px, горизонтальный 90px */
   justify-content: center;
   margin-bottom: 90px;
 }
 
 .cell {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   background-color: #c4c4c4;
   display: block;
   border: none;
