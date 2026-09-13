@@ -42,32 +42,36 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 150px);
   grid-template-rows: repeat(3, 150px);
-  gap: 45px 90px;          /* вертикальный gap 45px, горизонтальный 90px */
+  gap: 45px 90px;
   justify-content: center;
-  margin-bottom: 90px;
+  margin-bottom: 80px;
+  perspective: 1000px; /* нужно для 3D-эффекта */
 }
 
 .cell {
   width: 150px;
   height: 150px;
-  background-color: #c4c4c4;
   display: block;
-  border: none;
-  border-radius: 0;
-  transition: filter 0.2s ease;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
 }
 
 .cell:hover {
   filter: brightness(0.9);
 }
 
-/* Цветные ячейки */
-.cell-green {
-  background-color: #95bf96;
+.cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  backface-visibility: hidden;
 }
 
-.cell-pink {
-  background-color: #ff8fc7;
+/* Эффект "жалюзи" — переворот на 180° */
+.cell:hover {
+  transform: rotateY(180deg);
 }
 
 /* ----- CONTACT ----- */
