@@ -114,3 +114,11 @@ a {
     .back-link:hover {
       opacity: 0.7;
     }
+.copyright {
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #969696;
+  font-weight: 400;
+  text-transform: none;
+}
