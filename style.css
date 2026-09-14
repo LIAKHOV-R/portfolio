@@ -45,7 +45,7 @@ body {
   gap: 45px 90px;
   justify-content: center;
   margin-bottom: 80px;
-  perspective: 1000px; /* нужно для 3D-эффекта */
+  perspective: 1200px;
 }
 
 .cell {
@@ -54,11 +54,8 @@ body {
   display: block;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-}
-
-.cell:hover {
-  filter: brightness(0.9);
+  transition: transform 0.9s cubic-bezier(0.4, 0.0, 0.2, 1); /* более плавно */
+  cursor: pointer;
 }
 
 .cell img {
@@ -69,9 +66,9 @@ body {
   backface-visibility: hidden;
 }
 
-/* Эффект "жалюзи" — переворот на 180° */
+/* Убираем старый :hover с rotate */
 .cell:hover {
-  transform: rotateY(180deg);
+  filter: brightness(0.95);
 }
 
 /* ----- CONTACT ----- */
