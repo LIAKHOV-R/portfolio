@@ -55,6 +55,29 @@
 <footer class="footer">
   <a href="bio.html" class="contact-link">CONTACT</a>
 </footer>
+<script>
+  document.querySelectorAll('.cell').forEach(cell => {
+    let isAnimating = false;
 
+    cell.addEventListener('mouseenter', () => {
+      if (isAnimating) return;
+
+      isAnimating = true;
+      cell.style.transform = 'rotateY(360deg)';
+
+      // После окончания анимации сбрасываем
+      setTimeout(() => {
+        cell.style.transition = 'none';          // убираем transition, чтобы мгновенно вернуть
+        cell.style.transform = 'rotateY(0deg)';
+        
+        // Возвращаем transition обратно
+        setTimeout(() => {
+          cell.style.transition = 'transform 0.9s cubic-bezier(0.4, 0.0, 0.2, 1)';
+          isAnimating = false;
+        }, 20);
+      }, 900); // время = длительности transition
+    });
+  });
+</script>
 </body>
 </html>
