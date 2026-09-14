@@ -6,85 +6,133 @@
   <title>ПРОЕКТ 02</title>
   <link rel="stylesheet" href="../style.css">
   <style>
+  .project-page {
+    max-width: 1775px;
+    margin: 0 auto;
+    padding: 20px 70px 20px;     /* сильно уменьшили отступы */
+    color: #191919;
+    height: 100vh;               /* занимает всю высоту экрана */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: Corbel, "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #191919;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  .back-link:hover { opacity: 0.7; }
+
+  .project-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 18px;
+    align-items: start;
+    flex-shrink: 0;
+  }
+
+  .project-title {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .project-description {
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 480px;
+  }
+
+  .project-side-text {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #333;
+  }
+
+  /* Карусель занимает всё оставшееся место */
+  .carousel {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    background: #c4c4c4;
+    flex-grow: 1;                /* растягивается на оставшуюся высоту */
+    min-height: 0;
+  }
+
+  .carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.4s ease;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    height: 100%;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background: rgba(255,255,255,0.85);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #191919;
+    z-index: 10;
+  }
+  .carousel-btn.prev { left: 15px; }
+  .carousel-btn.next { right: 15px; }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 12px;
+    flex-shrink: 0;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+  }
+  .dot.active {
+    background: #191919;
+  }
+
+  @media (max-width: 1000px) {
     .project-page {
-      max-width: 1920px;
-      margin: 0 auto;
-      padding: 40px 40px 80px;
-      color: #191919;
+      height: auto;
+      padding: 20px 30px;
     }
-
-    /* Кнопка BACK */
-    .back-link {
-      display: inline-block;
-      font-family: Corbel, "Segoe UI", Arial, sans-serif;
-      font-size: 14px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #191919;
-      text-decoration: none;
-      margin-bottom: 25px;
-    }
-    .back-link:hover {
-      opacity: 0.7;
-    }
-
-    /* Верхний блок: слева заголовок+описание, справа доп. текст */
     .project-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 40px;
-      align-items: start;
+      grid-template-columns: 1fr;
+      gap: 15px;
     }
-
-    .project-title {
-      font-size: 26px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .project-description {
-      font-size: 16px;
-      line-height: 1.55;
-      max-width: 520px;
-    }
-
-    .project-side-text {
-      font-size: 15px;
-      line-height: 1.55;
-      color: #333;
-    }
-
-    /* Большой прямоугольный фрейм под картинку */
-    .project-image {
-      width: 100%;
-      height: 700px;
-      background-color: #c4c4c4;
-      margin-bottom: 40px;
-    }
-
-    .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    @media (max-width: 1000px) {
-      .project-page {
-        padding: 30px 30px 60px;
-      }
-      .project-header {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-      .project-image {
-        height: 380px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
@@ -93,31 +141,87 @@
     <a href="../index.html" class="back-link">BACK&lt;</a>
 
     <div class="project-header">
-      <!-- Левая часть -->
       <div>
         <h1 class="project-title">ПРОЕКТ 02</h1>
         <div class="project-description">
-          Конкурсный проект: Историко-культурный парк Олега Вещего<br>
-          КОНЦЕПЦИЯ. ЛАДОГА ПОРОГ<br>
-          -Разработка МАСТЕР-ПЛАНА. Ленинградская область<br>
+          ЭСКИЗНЫЙ ПРОЕКТ: Сервисный центр проката квадроциклов<br>
+          СВЕРДЛОВСКАЯ ОБЛАСТЬ<br>
+          - РАЗРАБОТКА ЭСКИЗНОГО ПРОЕКТА<br>
         </div>
       </div>
 
-      <!-- Правая часть (дополнительный текст) -->
       <div class="project-side-text">
-        Проект разработан в рамках конкурса  Историко-культурный парк Олега Вещего в 2026 году<br>
-        коллективом авторов под руководством бюро FISH. г. Екатеринбург.<br>
-        В мои задачи входила разработка МАСТЕР-ПЛАНА и консултация архитекторов<br>
-        по функциональному зонированию территории и грамонтному размещению объектов.<br>
+        СЕРВИСНЫЙ ЦЕНТР ПРОКАТА КВАДРАЦИКЛОВ ВКЛЮЧАЕТ В СЕБЯ НЕСКОЛЬКО ФУНКЦИЙ:<br>
+        РЕМОНТ И ПРОКАТ МОТОТЕХНИКИ, ОБЩЕСТВЕННОЕ ЗДАНИЕ С КУХНЕЙ И МЕСТОМ ДЛЯ ОТДЫХА ПОСЕТИТЕЛЕЙ<br>
       </div>
     </div>
 
-    <!-- Большой фрейм под изображение -->
-    <div class="project-image">
-      <img src="../images/ladoga.png" alt="Проект 02">
+    <!-- КАРУСЕЛЬ -->
+    <div class="carousel">
+      <div class="carousel-track">
+        <!-- Слайд 1 -->
+        <div class="carousel-slide">
+          <img src="../images/PRJ11/comercial/commercial-1.jpg" alt="Слайд 1">
+        </div>
+        <!-- Слайд 2 -->
+        <div class="carousel-slide">
+          <img src="../images/PRJ11/comercial/commercial-2.jpg" alt="Слайд 2">
+        </div>
+        <!-- Слайд 3 -->
+        <div class="carousel-slide">
+          <img src="../images/PRJ11/comercial/commercial-3.jpg" alt="Слайд 3">
+        </div>
+        <!-- Слайд 4 -->
+        <div class="carousel-slide">
+          <img src="../images/PRJ11/comercial/commercial-4.jpg" alt="Слайд 4">
+        </div>
+      </div>
+
+      <button class="carousel-btn prev">‹</button>
+      <button class="carousel-btn next">›</button>
+    </div>
+
+    <div class="carousel-dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
     </div>
 
   </div>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const dots = document.querySelectorAll('.dot');
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+    });
+  </script>
 
 </body>
 </html>
