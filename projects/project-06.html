@@ -228,20 +228,20 @@
 
   </div>
 
-  <script>
+    <script>
+    // ===== Карусель картинок =====
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
     const nextBtn = document.querySelector('.carousel-btn.next');
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const dots = document.querySelectorAll('.dot');
+    const carousel = document.getElementById('carousel');
 
     let currentIndex = 0;
 
     function updateCarousel() {
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentIndex);
-      });
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
     }
 
     nextBtn.addEventListener('click', () => {
@@ -260,6 +260,17 @@
         updateCarousel();
       });
     });
+
+    // Прокрутка колесиком мыши по карусели
+    carousel.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      if (e.deltaY > 0) {
+        currentIndex = (currentIndex + 1) % slides.length;
+      } else {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      }
+      updateCarousel();
+    }, { passive: false });
   </script>
 
 </body>
