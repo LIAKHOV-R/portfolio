@@ -17,51 +17,42 @@
     box-sizing: border-box;
   }
   .back-link {
-  display: block;
-  width: 650px;
-  margin-left: 140px;
-  margin-bottom: 12px;
-  font-family: Corbel, "Segoe UI", Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #191919;
-  text-decoration: none;
-}
-.back-link:hover { opacity: 0.7; }
-
-.project-header-wrapper {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.project-header {
-  display: grid;
-  grid-template-columns: 650px 910px;
-  gap: 110px;
-  margin-left: 140px;
-  align-items: start;
-}
-
-.project-title {
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 0 0 10px 0;
-}
-
-.project-description {
-  font-size: 14px;
-  line-height: 1.45;
-}
-
-.project-right {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #333;
-  
+    display: inline-block;
+    font-family: Corbel, "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #191919;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  .back-link:hover { opacity: 0.7; }
+  .project-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 18px;
+    align-items: start;
+    flex-shrink: 0;
+  }
+  .project-title {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .project-description {
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 480px;
+  }
+  .project-side-text {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #333;
+  }
   /* Большие кнопки переключения проектов — по краям на уровне шапки */
 .project-nav {
   position: fixed;
@@ -162,40 +153,28 @@
 </head>
 <body>
   <div class="project-page">
-    
-   <a href="../index.html" class="back-link">BACK&lt;</a>
-    
+    <a href="../index.html" class="back-link">BACK&lt;</a>
     <!-- ШАПКА + БОЛЬШИЕ КНОПКИ ПРОЕКТОВ -->
     <div class="project-header-wrapper">
       <!-- Кнопка предыдущего проекта -->
       <a href="../index.html" class="project-nav prev-project" title="главная">‹</a>
-      
       <div class="project-header">
         <div>
-   <div class="project-header">
-    <!-- Левая колонка -->
-    <div class="project-left">
-      <h1 class="project-title">ПРОЕКТ 01</h1>
-      <div class="project-description">
-        Создание инклюзивного безбарьерного входа на территорию<br>
-        старинного горного Завода в г. Сысерть<br>
-        Эскизный проект · 2024<br>
-        Разработка генплана и архитектуры
-      </div>
-    </div>
-<!-- Правая колонка -->
-    <div class="project-right">
-Текстовый блок. описание проекта.технико-экономические показатели, и тд. описание проекта<br>
-Текстовый блок. описание проекта.технико-экономические показатели, и тд. описание проекта<br>
-Текстовый блок. описание проекта.технико-экономические показатели, и тд. описание проекта<br>
-Текстовый блок. описание проекта.технико-экономические показатели, и тд. описание проекта<br>
-Текстовый блок. описание проекта.технико-экономические показатели, и тд. описание проекта
-    </div>
-  </div>
+          <h1 class="project-title">ПРОЕКТ 01</h1>
+          <div class="project-description">
+        Создание инклюзивного безбарьерного входа на территорию<br>
+        старинного горного Завода в г. Сысерть. СВЕРДЛОВСКАЯ ОБЛАСТЬ<br>
+        -Разработка проекта. Генплан. Архитектура.<br>
+        </div>
+      </div>
+      <div class="project-side-text">
+        ПРОЕКТ РАЗРАБОТАН В РАМКАХ ПРОГРАММЫ РАЗВИТИЯ ИНФРАСТРУКТУРЫ<br>
+        ГОРОДА СЫСЕРТЬ. ЛЕТО НА ЗАВОДЕ. <br>
+      </div>
+    </div>
       <!-- Кнопка следующего проекта -->
       <a href="project-02.html" class="project-nav next-project" title="Следующий проект">›</a>
     </div>
-        
     <!-- КАРУСЕЛЬ -->
     <div class="carousel">
       <div class="carousel-track">
