@@ -6,166 +6,170 @@
   <title>ПРОЕКТ 01</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-  .project-page {
-    max-width: 1775px;
-    margin: 0 auto;
-    padding: 20px 70px 20px;     /* сильно уменьшили отступы */
-    color: #191919;
-    height: 100vh;               /* занимает всю высоту экрана */
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-  }
-
-  .back-link {
-    display: inline-block;
-    font-family: Corbel, "Segoe UI", Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #191919;
-    text-decoration: none;
-    margin-bottom: 10px;
-  }
-  .back-link:hover { opacity: 0.7; }
-
-  .project-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 18px;
-    align-items: start;
-    flex-shrink: 0;
-  }
-
-  .project-title {
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .project-description {
-    font-size: 14px;
-    line-height: 1.45;
-    max-width: 480px;
-  }
-
-  .project-side-text {
-    font-size: 13px;
-    line-height: 1.45;
-    color: #333;
-  }
-
-  /* Большие кнопки переключения проектов — по краям на уровне шапки */
-.project-nav {
-  position: fixed;
-  top: 60px;                    /* уровень шапки */
-  width: 48px;
-  height: 90px;
-  background: rgba(240, 240, 240, 0.75);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  color: #191919;
-  z-index: 100;
-  transition: background 0.2s;
-  text-decoration: none;
-}
-
-.project-nav:hover {
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.project-nav.prev-project {
-  left: 0;
-  border-radius: 0 6px 6px 0;
-}
-
-.project-nav.next-project {
-  right: 0;
-  border-radius: 6px 0 0 6px;
-}
-
-  /* Карусель занимает всё оставшееся место */
-  .carousel {
-    position: relative;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    overflow: hidden;
-    background: #c4c4c4;
-    flex-grow: 1;                /* растягивается на оставшуюся высоту */
-    min-height: 0;
-  }
-
-  .carousel-track {
-    display: flex;
-    height: 100%;
-    transition: transform 0.4s ease;
-  }
-
-  .carousel-slide {
-    min-width: 100%;
-    height: 100%;
-  }
-
-  .carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
-    background: rgba(255,255,255,0.85);
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: #191919;
-    z-index: 10;
-  }
-  .carousel-btn.prev { left: 15px; }
-  .carousel-btn.next { right: 15px; }
-
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-    margin-top: 12px;
-    flex-shrink: 0;
-  }
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ccc;
-    cursor: pointer;
-  }
-  .dot.active {
-    background: #191919;
-  }
-
-  @media (max-width: 1000px) {
     .project-page {
-      height: auto;
-      padding: 20px 30px;
+      max-width: 1775px;
+      margin: 0 auto;
+      padding: 20px 0 30px;
+      color: #191919;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
     }
+
+    /* ----- BACK ----- */
+    .back-link {
+      display: block;
+      width: 650px;
+      margin-left: 140px;
+      margin-bottom: 12px;
+      font-family: Corbel, "Segoe UI", Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #191919;
+      text-decoration: none;
+    }
+    .back-link:hover { opacity: 0.7; }
+
+    /* ----- ШАПКА ----- */
+    .project-header-wrapper {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
     .project-header {
-      grid-template-columns: 1fr;
-      gap: 15px;
+      display: grid;
+      grid-template-columns: 650px 910px;
+      gap: 110px;
+      margin-left: 140px;
+      align-items: start;
     }
-  }
-</style>
+
+    .project-title {
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+    }
+
+    .project-description {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .project-right {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #333;
+    }
+
+    /* Большие кнопки переключения проектов */
+    .project-nav {
+      position: fixed;
+      top: 70px;
+      width: 48px;
+      height: 90px;
+      background: rgba(240, 240, 240, 0.8);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: #191919;
+      z-index: 100;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .project-nav:hover {
+      background: rgba(255, 255, 255, 0.95);
+    }
+    .project-nav.prev-project {
+      left: 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .project-nav.next-project {
+      right: 0;
+      border-radius: 6px 0 0 6px;
+    }
+
+    /* ----- КАРУСЕЛЬ ----- */
+    .carousel {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      overflow: hidden;
+      background: #c4c4c4;
+      flex-grow: 1;
+      min-height: 500px;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      background: rgba(255,255,255,0.85);
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: #191919;
+      z-index: 10;
+      border-radius: 4px;
+    }
+    .carousel-btn:hover { background: #fff; }
+    .carousel-btn.prev { left: 15px; }
+    .carousel-btn.next { right: 15px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+    }
+    .dot.active { background: #191919; }
+
+    @media (max-width: 1400px) {
+      .project-header {
+        grid-template-columns: 1fr 1fr;
+        margin-left: 40px;
+        gap: 40px;
+      }
+      .back-link {
+        margin-left: 40px;
+        width: auto;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -173,50 +177,47 @@
 
     <a href="../index.html" class="back-link">BACK&lt;</a>
 
-    <!-- ШАПКА + БОЛЬШИЕ КНОПКИ ПРОЕКТОВ -->
     <div class="project-header-wrapper">
-      <!-- Кнопка предыдущего проекта -->
-      <a href="../index.html" class="project-nav prev-project" title="главная">‹</a>
+      <!-- Кнопки переключения проектов -->
+      <a href="../index.html" class="project-nav prev-project" title="На главную">‹</a>
+      <a href="project-02.html" class="project-nav next-project" title="Следующий проект">›</a>
 
       <div class="project-header">
-        <div>
+        <!-- Левая колонка -->
+        <div class="project-left">
           <h1 class="project-title">ПРОЕКТ 01</h1>
           <div class="project-description">
-        Создание инклюзивного безбарьерного входа на территорию<br>
-        старинного горного Завода в г. Сысерть. СВЕРДЛОВСКАЯ ОБЛАСТЬ<br>
-        -Разработка проекта. Генплан. Архитектура.<br>
+            Создание инклюзивного безбарьерного входа<br>
+            на территорию старинного горного Завода в г. Сысерть<br>
+            Разработка проекта · реализация · 2025-2026<br>
+          </div>
+        </div>
+
+        <!-- Правая колонка -->
+        <div class="project-right">
+          Текстовый блок. описание проекта.технико-экономические показатели, и тд<br>
+          Текстовый блок. описание проекта.технико-экономические показатели, и тд<br>
+          Текстовый блок. описание проекта.технико-экономические показатели, и тд<br>
+          Текстовый блок. описание проекта.технико-экономические показатели, и тд<br>
+          Текстовый блок. описание проекта.технико-экономические показатели, и тд
         </div>
       </div>
-
-      <div class="project-side-text">
-        ПРОЕКТ РАЗРАБОТАН В РАМКАХ ПРОГРАММЫ РАЗВИТИЯ ИНФРАСТРУКТУРЫ<br>
-        ГОРОДА СЫСЕРТЬ. ЛЕТО НА ЗАВОДЕ. <br>
-      </div>
     </div>
 
-      <!-- Кнопка следующего проекта -->
-      <a href="project-02.html" class="project-nav next-project" title="Следующий проект">›</a>
-    </div>
-
-
-    <!-- КАРУСЕЛЬ -->
-    <div class="carousel">
+    <!-- Карусель -->
+    <div class="carousel" id="carousel">
       <div class="carousel-track">
-        <!-- Слайд 1 -->
         <div class="carousel-slide">
           <img src="../images/leto/leto-0.jpg" alt="Слайд 1">
         </div>
-        <!-- Слайд 2 -->
         <div class="carousel-slide">
           <img src="../images/leto/leto-2.jpg" alt="Слайд 2">
         </div>
-        <!-- Слайд 3 -->
         <div class="carousel-slide">
           <img src="../images/leto/leto-3.jpg" alt="Слайд 3">
         </div>
-        <!-- Слайд 4 -->
         <div class="carousel-slide">
-          <img src="../images/leto/leto-4.jpg" alt="Слайд 3">
+          <img src="../images/leto/leto-4.jpg" alt="Слайд 4">
         </div>
       </div>
 
@@ -228,12 +229,12 @@
       <div class="dot active"></div>
       <div class="dot"></div>
       <div class="dot"></div>
+      <div class="dot"></div>
     </div>
 
   </div>
 
-   <script>
-    // ===== Карусель картинок =====
+  <script>
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
     const nextBtn = document.querySelector('.carousel-btn.next');
@@ -265,7 +266,7 @@
       });
     });
 
-    // Прокрутка колесиком мыши по карусели
+    // Прокрутка колесиком
     carousel.addEventListener('wheel', (e) => {
       e.preventDefault();
       if (e.deltaY > 0) {
