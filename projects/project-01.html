@@ -104,7 +104,7 @@
       overflow: hidden;
       background: #c4c4c4;
       flex-grow: 1;
-      min-height: 0px;
+      min-height: 500px;
     }
 
     .carousel-track {
@@ -137,17 +137,17 @@
       font-size: 20px;
       color: #191919;
       z-index: 10;
+      border-radius: 4px;
     }
     .carousel-btn:hover { background: #fff; }
     .carousel-btn.prev { left: 15px; }
     .carousel-btn.next { right: 15px; }
 
     .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-    margin-top: 12px;
-    flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
     }
     .dot {
       width: 8px;
@@ -156,20 +156,20 @@
       background: #ccc;
       cursor: pointer;
     }
-  .dot.active {
-    background: #191919;
-  }
-  @media (max-width: 1000px) {
-    .project-page {
-      height: auto;
-      padding: 20px 30px;
+    .dot.active { background: #191919; }
+
+    @media (max-width: 1400px) {
+      .project-header {
+        grid-template-columns: 1fr 1fr;
+        margin-left: 40px;
+        gap: 40px;
+      }
+      .back-link {
+        margin-left: 40px;
+        width: auto;
+      }
     }
-    .project-header {
-      grid-template-columns: 1fr;
-      gap: 15px;
-    }
-  }
-</style>
+  </style>
 </head>
 <body>
 
