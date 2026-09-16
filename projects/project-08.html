@@ -6,15 +6,18 @@
   <title>ПРОЕКТ 08</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-    .project-page {
-      max-width: 1775px;
-      margin: 0 auto;
-      padding: 20px 70px 40px;
-      color: #191919;
-      position: relative;
-    }
+  .project-page {
+    max-width: 1775px;
+    margin: 0 auto;
+    padding: 20px 70px 20px;     /* сильно уменьшили отступы */
+    color: #191919;
+    height: 100vh;               /* занимает всю высоту экрана */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
 
-    .back-link {
+  .back-link {
   display: block;
   width: 650px;
   margin-left: 120px;
@@ -46,22 +49,22 @@
   text-transform: uppercase;
   margin-bottom: 8px;
 }
+  .project-description {
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 480px;
+  }
 
-    .project-description {
-      font-size: 15px;
-      line-height: 1.5;
-    }
+  .project-side-text {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #333;
+  }
 
-    .project-side-text {
-      font-size: 14px;
-      line-height: 1.5;
-      color: #333;
-    }
-
-/* Большие кнопки переключения проектов — по краям на уровне шапки */
+    /* Большие кнопки переключения проектов — по краям на уровне шапки */
 .project-nav {
   position: fixed;
-  top: 80px;                    /* уровень шапки */
+  top: 60px;                    /* уровень шапки */
   width: 48px;
   height: 90px;
   background: rgba(240, 240, 240, 0.75);
@@ -90,75 +93,81 @@
   right: 0;
   border-radius: 6px 0 0 6px;
 }
+    
+  /* Карусель занимает всё оставшееся место */
+  .carousel {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    background: #c4c4c4;
+    flex-grow: 1;                /* растягивается на оставшуюся высоту */
+    min-height: 0;
+  }
 
-    /* ----- КАРУСЕЛЬ КАРТИНОК ----- */
-    .carousel {
-      position: relative;
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      overflow: hidden;
-      background: #c4c4c4;
-      height: 620px;
-    }
+  .carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.4s ease;
+  }
 
-    .carousel-track {
-      display: flex;
-      height: 100%;
-      transition: transform 0.45s ease;
-    }
+  .carousel-slide {
+    min-width: 100%;
+    height: 100%;
+  }
 
-    .carousel-slide {
-      min-width: 100%;
-      height: 100%;
-    }
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
-    .carousel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background: rgba(255,255,255,0.85);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #191919;
+    z-index: 10;
+  }
+  .carousel-btn.prev { left: 15px; }
+  .carousel-btn.next { right: 15px; }
 
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      background: rgba(255,255,255,0.85);
-      border: none;
-      cursor: pointer;
-      font-size: 20px;
-      color: #191919;
-      z-index: 10;
-      border-radius: 4px;
-    }
-    .carousel-btn:hover { background: #fff; }
-    .carousel-btn.prev { left: 18px; }
-    .carousel-btn.next { right: 18px; }
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 12px;
+    flex-shrink: 0;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff7fbf;
+    cursor: pointer;
+  }
+  .dot.active {
+    background: #191919;
+  }
 
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 16px;
+  @media (max-width: 1000px) {
+    .project-page {
+      height: auto;
+      padding: 20px 30px;
     }
-    .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #ccc;
-      cursor: pointer;
+    .project-header {
+      grid-template-columns: 1fr;
+      gap: 15px;
     }
-    .dot.active { background: #191919; }
-
-    @media (max-width: 1000px) {
-      .project-page { padding: 20px 25px 40px; }
-      .project-header { grid-template-columns: 1fr; padding: 0 50px; }
-      .carousel { height: 380px; }
-      .project-nav { width: 44px; font-size: 26px; }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
@@ -175,22 +184,24 @@
         <div>
           <h1 class="project-title">ПРОЕКТ 08</h1>
           <div class="project-description">
-ЭСКИЗНЫЙ ПРОЕКТ: КОМПЛЕКС СКЛАДСКИХ И ТОРГОВЫХ ЗДАНИЙ<br>
-СВЕРДЛОВСКАЯ ОБЛАСТЬ<br>
-- РАЗРАБОТКА ЭСКИЗНОГО ПРОЕКТА
-          </div>
-        </div>
-        <div class="project-side-text">
-ОБЩЕЕ ОПИСАНИЕ ПРОЕКТА, КОНЦЕПЦИЯ, И Т.Д.<br>
-ДОПОЛНИТЕЛЬНЫЙ ТЕКСТ О ПРОЕКТЕ
+          Здесь будет описание проекта, фотографии, чертежи и т.д.<br>
+          Местоположение проекта. Год. Информация<br>
+          - РАЗРАБОТКА ЭСКИЗНОГО И РАБОЧЕГО ПРОЕКТА<br>
         </div>
       </div>
 
-      <!-- Кнопка следующего проекта -->
-      <a href="project-09.html" class="project-nav next-project" title="Следующий проект">›</a>
+      <div class="project-side-text">
+        ОПИСАНИЕ ПРОЕКТА. ТЕХНИКО-ЭКОНОМИЧЕСКИЕ ПОКАЗАТЕЛИ<br>
+        ОПИСАНИЕ ПРОЕКТА. ТЕХНИКО-ЭКОНОМИЧЕСКИЕ ПОКАЗАТЕЛИ<br>
+        ДОПОЛНИТЕЛЬНАЯ ИНФА<br>
+      </div>
     </div>
 
-    <!-- КАРУСЕЛЬ КАРТИНОК -->
+    <!-- Кнопка следующего проекта -->
+    <a href="project-09.html" class="project-nav next-project" title="Следующий проект">›</a>
+    </div>
+    
+    <!-- КАРУСЕЛЬ -->
     <div class="carousel" id="carousel">
       <div class="carousel-track">
         <div class="carousel-slide">
@@ -201,6 +212,9 @@
         </div>
         <div class="carousel-slide">
           <img src="../images/next.jpg" alt="Слайд 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="../images/next.jpg" alt="Слайд 4">
         </div>
       </div>
 
