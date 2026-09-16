@@ -136,8 +136,8 @@
     color: #191919;
     z-index: 10;
   }
-  .carousel-btn.prev { left: 15px; }
-  .carousel-btn.next { right: 15px; }
+  .carousel-btn.prev { left: 20px; }
+  .carousel-btn.next { right: 20px; }
 
   .carousel-dots {
     display: flex;
@@ -150,7 +150,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #ccc;
+    background: #ff7fbf;
     cursor: pointer;
   }
   .dot.active {
@@ -162,9 +162,9 @@
       height: auto;
       padding: 20px 30px;
     }
-    .project-header {
-      grid-template-columns: 1fr;
-      gap: 15px;
+      .project-header { grid-template-columns: 1fr; padding: 0 50px; }
+      .carousel { height: 380px; }
+      .project-nav { width: 44px; font-size: 26px; }
     }
   }
 </style>
@@ -234,7 +234,7 @@
 
   </div>
 
-    <script>
+  <script>
     // ===== Карусель картинок =====
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
