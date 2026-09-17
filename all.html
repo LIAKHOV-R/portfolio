@@ -156,5 +156,25 @@
   grid.innerHTML = '';
   images.forEach(img => grid.appendChild(img));
 </script>
+  <script>
+  // Рандомный порядок
+  const grid = document.querySelector('.all-grid');
+  const images = Array.from(grid.children);
+
+  for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+
+  grid.innerHTML = '';
+  images.forEach(img => grid.appendChild(img));
+
+  // Появление картинок с задержкой
+  images.forEach((img, index) => {
+    setTimeout(() => {
+      img.classList.add('visible');
+    }, 80 + index * 40);   // небольшая волна появления
+  });
+</script>
 </body>
 </html>
