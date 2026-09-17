@@ -54,20 +54,20 @@
     .back-to-grid:hover { opacity: 0.7; }
 
     /* Сетка всех изображений */
-    .all-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 4px;                    /* очень маленький зазор */
-      padding-top: 120px;          /* отступ под фиксированную шапку */
-      width: 100%;
-    }
+.all-grid img {
+  width: 100%;
+  aspect-ratio: 8 / 3;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
 
-    .all-grid img {
-      width: 100%;
-      aspect-ratio: 8 / 3;         /* 1920×720 */
-      object-fit: cover;
-      display: block;
-    }
+.all-grid img.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 
     @media (max-width: 1200px) {
       .all-grid {
