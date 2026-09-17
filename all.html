@@ -96,15 +96,67 @@
   <div class="all-grid">
     <!-- Сюда будем вставлять все картинки -->
     <!-- Пример: -->
-    <img src="images/leto/leto-0.jpg" alt="">
+
+    <img src="images/ten/ten-01.jpg" alt="">
+    <img src="images/ten/ten-02.jpg" alt="">
+    <img src="images/ten/ten-gp-0.jpg" alt="">
+    <img src="images/leto/leto-0-1.jpg" alt="">
     <img src="images/leto/leto-2.jpg" alt="">
     <img src="images/leto/leto-3.jpg" alt="">
-    <img src="images/leto/leto-4.jpg" alt="">
+    <img src="images/ten/ten-03.jpg" alt="">
+    <img src="images/ten/ten-01.jpg" alt="">
+    <img src="images/ten/ten-02.jpg" alt="">
+    <img src="images/ten/ten-gp-0.jpg" alt="">
+    <img src="images/leto/leto-0-1.jpg" alt="">
+    <img src="images/leto/leto-2.jpg" alt="">
+    <img src="images/leto/leto-3.jpg" alt="">
+    <img src="images/ten/ten-03.jpg" alt="">
+    <img src="images/ten/ten-01.jpg" alt="">
+    <img src="images/ten/ten-02.jpg" alt="">
+    <img src="images/ten/ten-gp-0.jpg" alt="">
+    <img src="images/leto/leto-0-1.jpg" alt="">
+    <img src="images/leto/leto-2.jpg" alt="">
+    <img src="images/leto/leto-3.jpg" alt="">
+    <img src="images/ten/ten-03.jpg" alt="">
+     <img src="images/ten/ten-01.jpg" alt="">
+    <img src="images/ten/ten-02.jpg" alt="">
+    <img src="images/ten/ten-gp-0.jpg" alt="">
+    <img src="images/leto/leto-0-1.jpg" alt="">
+    <img src="images/leto/leto-2.jpg" alt="">
+    <img src="images/leto/leto-3.jpg" alt="">
+    <img src="images/ten/ten-03.jpg" alt="">
+    <img src="images/ten/ten-01.jpg" alt="">
+    <img src="images/ten/ten-02.jpg" alt="">
+    <img src="images/ten/ten-gp-0.jpg" alt="">
+    <img src="images/leto/leto-0-1.jpg" alt="">
+    <img src="images/leto/leto-2.jpg" alt="">
+    <img src="images/leto/leto-3.jpg" alt="">
+    <img src="images/ten/ten-03.jpg" alt="">
+    <img src="images/ten/ten-01.jpg" alt="">
+    <img src="images/ten/ten-02.jpg" alt="">
+    <img src="images/ten/ten-gp-0.jpg" alt="">
+    <img src="images/leto/leto-0-1.jpg" alt="">
+    <img src="images/leto/leto-2.jpg" alt="">
+    <img src="images/leto/leto-3.jpg" alt="">
+    <img src="images/ten/ten-03.jpg" alt="">
 
     <!-- Добавляйте сюда остальные картинки из всех проектов -->
     <!-- Просто копируйте строки <img src="путь" alt=""> -->
 
   </div>
+<script>
+  const grid = document.querySelector('.all-grid');
+  const images = Array.from(grid.children);
 
+  // Перемешиваем массив
+  for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+
+  // Очищаем сетку и вставляем в новом порядке
+  grid.innerHTML = '';
+  images.forEach(img => grid.appendChild(img));
+</script>
 </body>
 </html>
