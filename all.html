@@ -142,6 +142,19 @@
     <!-- Просто копируйте строки <img src="путь" alt=""> -->
 
   </div>
+<script>
+  const grid = document.querySelector('.all-grid');
+  const images = Array.from(grid.children);
 
+  // Перемешиваем массив
+  for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+
+  // Очищаем сетку и вставляем в новом порядке
+  grid.innerHTML = '';
+  images.forEach(img => grid.appendChild(img));
+</script>
 </body>
 </html>
