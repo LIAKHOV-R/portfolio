@@ -81,5 +81,28 @@
     });
   });
 </script>
+  <script>
+  document.getElementById('showAllBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const cells = document.querySelectorAll('.cell');
+    
+    cells.forEach((cell, index) => {
+      // Случайное направление разлёта
+      const x = (Math.random() - 0.5) * 1200;
+      const y = (Math.random() - 0.5) * 800;
+      const rot = (Math.random() - 0.5) * 180;
+
+      cell.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      cell.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(0.3)`;
+      cell.style.opacity = '0';
+    });
+
+    // Переход на all.html после анимации
+    setTimeout(() => {
+      window.location.href = 'all.html';
+    }, 850);
+  });
+</script>
 </body>
 </html>
