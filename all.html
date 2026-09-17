@@ -54,20 +54,20 @@
     .back-to-grid:hover { opacity: 0.7; }
 
     /* Сетка всех изображений */
-.all-grid img {
-  width: 100%;
-  aspect-ratio: 8 / 3;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  transform: translateY(40px) scale(0.96);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
+    .all-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;                    /* очень маленький зазор */
+      padding-top: 120px;          /* отступ под фиксированную шапку */
+      width: 100%;
+    }
 
-.all-grid img.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
+    .all-grid img {
+      width: 100%;
+      aspect-ratio: 8 / 3;         /* 1920×720 */
+      object-fit: cover;
+      display: block;
+    }
 
     @media (max-width: 1200px) {
       .all-grid {
@@ -96,85 +96,15 @@
   <div class="all-grid">
     <!-- Сюда будем вставлять все картинки -->
     <!-- Пример: -->
-    <img src="images/ten/ten-01.jpg" alt="">
-    <img src="images/ten/ten-02.jpg" alt="">
-    <img src="images/ten/ten-gp-0.jpg" alt="">
-    <img src="images/leto/leto-0-1.jpg" alt="">
+    <img src="images/leto/leto-0.jpg" alt="">
     <img src="images/leto/leto-2.jpg" alt="">
     <img src="images/leto/leto-3.jpg" alt="">
-    <img src="images/ten/ten-03.jpg" alt="">
-    <img src="images/ten/ten-01.jpg" alt="">
-    <img src="images/ten/ten-02.jpg" alt="">
-    <img src="images/ten/ten-gp-0.jpg" alt="">
-    <img src="images/leto/leto-0-1.jpg" alt="">
-    <img src="images/leto/leto-2.jpg" alt="">
-    <img src="images/leto/leto-3.jpg" alt="">
-    <img src="images/ten/ten-03.jpg" alt="">
-    <img src="images/ten/ten-01.jpg" alt="">
-    <img src="images/ten/ten-02.jpg" alt="">
-    <img src="images/ten/ten-gp-0.jpg" alt="">
-    <img src="images/leto/leto-0-1.jpg" alt="">
-    <img src="images/leto/leto-2.jpg" alt="">
-    <img src="images/leto/leto-3.jpg" alt="">
-    <img src="images/ten/ten-03.jpg" alt="">
-     <img src="images/ten/ten-01.jpg" alt="">
-    <img src="images/ten/ten-02.jpg" alt="">
-    <img src="images/ten/ten-gp-0.jpg" alt="">
-    <img src="images/leto/leto-0-1.jpg" alt="">
-    <img src="images/leto/leto-2.jpg" alt="">
-    <img src="images/leto/leto-3.jpg" alt="">
-    <img src="images/ten/ten-03.jpg" alt="">
-    <img src="images/ten/ten-01.jpg" alt="">
-    <img src="images/ten/ten-02.jpg" alt="">
-    <img src="images/ten/ten-gp-0.jpg" alt="">
-    <img src="images/leto/leto-0-1.jpg" alt="">
-    <img src="images/leto/leto-2.jpg" alt="">
-    <img src="images/leto/leto-3.jpg" alt="">
-    <img src="images/ten/ten-03.jpg" alt="">
-    <img src="images/ten/ten-01.jpg" alt="">
-    <img src="images/ten/ten-02.jpg" alt="">
-    <img src="images/ten/ten-gp-0.jpg" alt="">
-    <img src="images/leto/leto-0-1.jpg" alt="">
-    <img src="images/leto/leto-2.jpg" alt="">
-    <img src="images/leto/leto-3.jpg" alt="">
-    <img src="images/ten/ten-03.jpg" alt="">
+    <img src="images/leto/leto-4.jpg" alt="">
+
     <!-- Добавляйте сюда остальные картинки из всех проектов -->
     <!-- Просто копируйте строки <img src="путь" alt=""> -->
 
   </div>
-<script>
-  const grid = document.querySelector('.all-grid');
-  const images = Array.from(grid.children);
 
-  // Перемешиваем массив
-  for (let i = images.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [images[i], images[j]] = [images[j], images[i]];
-  }
-
-  // Очищаем сетку и вставляем в новом порядке
-  grid.innerHTML = '';
-  images.forEach(img => grid.appendChild(img));
-</script>
-  <script>
-  // Рандомный порядок
-  const grid = document.querySelector('.all-grid');
-  const images = Array.from(grid.children);
-
-  for (let i = images.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [images[i], images[j]] = [images[j], images[i]];
-  }
-
-  grid.innerHTML = '';
-  images.forEach(img => grid.appendChild(img));
-
-  // Появление картинок с задержкой
-  images.forEach((img, index) => {
-    setTimeout(() => {
-      img.classList.add('visible');
-    }, 80 + index * 40);   // небольшая волна появления
-  });
-</script>
 </body>
 </html>
