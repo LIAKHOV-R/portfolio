@@ -170,6 +170,41 @@
   color: #666;
   text-transform: none;
 }
+
+  .instagram-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instagram-note {
+  position: absolute;
+  top: 70px;                    /* чуть ниже иконки */
+  right: 0;
+  background: rgba(80, 80, 80, 0.85);
+  color: #fff;
+  font-size: 8px;
+  line-height: 1.35;
+  padding: 7px 10px;
+  border-radius: 4px;
+  width: 180px;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Появление с задержкой 1.1 секунды */
+.instagram-wrapper:hover .instagram-note {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 1.1s;
+}
 </style>
 </head>
 <body>
@@ -234,9 +269,14 @@
   <a href="https://wa.me/qr/HUTGANC7JHUSF1" target="_blank" class="social-icon" title="WhatsApp">
     <img src="images/icon-png/ws.png" alt="WhatsApp">
   </a>
+    <div class="instagram-wrapper">
   <a href="https://www.instagram.com/lyakhov_r" target="_blank" class="social-icon" title="Instagram">
     <img src="images/icon-png/ig.png" alt="Instagram">
   </a>
+  <div class="instagram-note">
+    instagram — Признан экстремистской организацией<br>и запрещен на территории РФ
+  </div>
+</div>
   <a href="https://yandex.ru/chat/p/a8528904-e89c-94a2-6818-091027cf861b?utm_source=invite" target="_blank" class="social-icon" title="Яндекс Мессенджер">
     <img src="images/icon-png/yand.png" alt="Яндекс">
   </a>
