@@ -97,7 +97,7 @@
 <body>
 
   <header class="all-header">
-    <a href="index.html" class="back-link"><b>← GRID</b></a>
+    <a href="index.html" class="back-link" id="showAllBtn"><b>← GRID</b></a>
     <h1>PORTFOLIO</h1>
     <div class="subtitle">LIAKHOV ROMAN. ARCHITECT</div>
   </header>
@@ -172,6 +172,29 @@
   // Очищаем сетку и вставляем в новом порядке
   grid.innerHTML = '';
   images.forEach(img => grid.appendChild(img));
+</script>
+   <script>
+  document.getElementById('showAllBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const all-grid = document.querySelectorAll('.cell');
+    
+    cells.forEach((cell, index) => {
+      // Случайное направление разлёта
+      const x = (Math.random() - 0.5) * 1200;
+      const y = (Math.random() - 0.5) * 800;
+      const rot = (Math.random() - 0.5) * 180;
+
+      cell.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+      cell.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(0.3)`;
+      cell.style.opacity = '0';
+    });
+
+    // Переход на all.html после анимации
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 650);
+  });
 </script>
 </body>
 </html>
