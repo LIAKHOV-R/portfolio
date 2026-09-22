@@ -103,9 +103,9 @@ body {
 
 @media (max-width: 480px) {
   .bingo-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     max-width: 280px;
-    gap: 18px;
+    gap: 18px 20px;
   }
 }
 
