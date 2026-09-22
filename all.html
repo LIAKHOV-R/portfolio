@@ -97,8 +97,7 @@
 <body>
 
   <header class="all-header">
-    <a href="index.html" class="back-to-grid">← GRID</a>
-    <a href="index.html" class="show-all-btn"><b>← GRID</b></a>
+    <a href="index.html" class="back-to-grid"><b>← GRID</b></a>
     <h1>PORTFOLIO</h1>
     <div class="subtitle">LIAKHOV ROMAN. ARCHITECT</div>
   </header>
@@ -190,7 +189,7 @@
         const y = (Math.random() - 0.5) * 1000;
         const rot = (Math.random() - 0.5) * 200;
 
-        img.style.transition = 'all 0.75s cubic-bezier(0.4, 0, 0.2, 1)';
+        img.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         img.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(0.25)`;
         img.style.opacity = '0';
       });
@@ -198,7 +197,7 @@
       // Переход на главную после анимации
       setTimeout(() => {
         window.location.href = 'index.html';
-      }, 800);
+      }, 600);
     });
   }
 </script>
