@@ -3,7 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 body {
   font-family: Corbel bold, "Segoe UI", Arial bold, sans-serif;
   background-color: #FFFFFF;
@@ -13,44 +16,52 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 /* ----- HEADER ----- */
 .header {
   text-align: center;
-  padding-top: 30px;
-  margin-bottom: 70px;
+  padding: 25px 20px 40px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .header h1 {
-  font-size: 80px;           /* увеличили PORTFOLIO */
+  font-size: clamp(28px, 9vw, 80px);      /* увеличили PORTFOLIO */
   font-weight: 500;
-  letter-spacing: 2px;      /* чуть шире, чтобы визуально тянулось */
-  line-height: 1;
+  letter-spacing: 0.04em;      /* чуть шире, чтобы визуально тянулось */
+  line-height: 1.05;
+  margin: 0;
 }
 
 .subtitle {
-  font-size: 22px;           /* сделали крупнее */
+  font-size: clamp(13px, 3.2vw, 22px);           /* сделали крупнее */
   font-weight: 500;
-  letter-spacing: 5px;     /* подгоняем ширину под PORTFOLIO */
-  margin-top: 0.2px;
+  letter-spacing: 0.18em;     /* подгоняем ширину под PORTFOLIO */
+  margin-top: 6px;
   color: #191919;
 }
 
 /* ----- GRID ----- */
 .bingo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 150px);
-  grid-template-rows: repeat(3, 150px);
-  gap: 45px 90px;
-  justify-content: center;
-  margin-bottom: 80px;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  gap: 28px 40px;
   perspective: 1200px;
+
+  /* По умолчанию 4 колонки */
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .cell {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   display: block;
   position: relative;
   transform-style: preserve-3d;
@@ -66,11 +77,53 @@ body {
   backface-visibility: hidden;
 }
 
-/* Убираем старый :hover с rotate */
-.cell:hover {
-  filter: brightness(0.95);
+/* ===== АДАПТИВ ===== */
+
+/* Планшеты и небольшие ноутбуки */
+@media (max-width: 1100px) {
+  .bingo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 720px;
+    gap: 26px 36px;
+  }
 }
 
+/* Большие телефоны и маленькие планшеты */
+@media (max-width: 750px) {
+  .bingo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 460px;
+    gap: 22px 28px;
+  }
+}
+
+/* Обычные смартфоны */
+@media (max-width: 520px) {
+  .bingo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 340px;
+    gap: 18px 20px;
+    padding: 0 16px;
+  }
+
+  .header h1 {
+    font-size: clamp(26px, 10vw, 42px);
+  }
+
+  .subtitle {
+    font-size: clamp(12px, 3.5vw, 16px);
+    letter-spacing: 0.12em;
+  }
+}
+
+/* Очень узкие экраны */
+@media (max-width: 380px) {
+  .bingo-grid {
+    grid-template-columns: 1fr;
+    max-width: 260px;
+    gap: 18px;
+  }
+}
 /* ----- CONTACT ----- */
 .footer {
   margin-top: auto;
