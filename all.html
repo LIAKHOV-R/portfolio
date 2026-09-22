@@ -189,7 +189,7 @@
         const y = (Math.random() - 0.5) * 1000;
         const rot = (Math.random() - 0.5) * 200;
 
-        img.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        img.style.transition = 'all 1.3s cubic-bezier(0.4, 0, 0.2, 1)';
         img.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(0.25)`;
         img.style.opacity = '0';
       });
@@ -197,7 +197,7 @@
       // Переход на главную после анимации
       setTimeout(() => {
         window.location.href = 'index.html';
-      }, 600);
+      }, 1000);
     });
   }
 </script>
