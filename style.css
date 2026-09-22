@@ -122,9 +122,9 @@ body {
 /* Очень узкие экраны */
 @media (max-width: 380px) {
   .bingo-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     max-width: 260px;
-    gap: 18px;
+    gap: 16px 18px;
   }
 }
 /* ----- CONTACT ----- */
