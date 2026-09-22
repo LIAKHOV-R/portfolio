@@ -69,6 +69,7 @@ body {
   transform-style: preserve-3d;
   transition: transform 0.9s cubic-bezier(0.4, 0.0, 0.2, 1); /* более плавно */
   cursor: pointer;
+  overflow: hidden;
 }
 
 .cell img {
@@ -87,6 +88,14 @@ body {
     grid-template-columns: repeat(3, 1fr);
     max-width: 720px;
     gap: 26px 36px;
+  }
+}
+
+@media (max-width: 800px) {          /* специально под iPad */
+  .bingo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 640px;
+    gap: 20px 24px;
   }
 }
 
